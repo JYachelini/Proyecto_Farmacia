@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --main-border-color:#8e8a8a ;
+}
+
+body{
+    font-family: Noto Sans, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--main-border-color);
+    padding: 0 20px;
+    div img{
+        width: 200px;
+    }
+}
+
+.navbar-left, .navbar-right{
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+    font-family: Courier Prime, sans-serif;
+    font-size: .75rem;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    li{
+        display: flex;
+        padding: 10px;
+    }
+}
+
+.navbar-search-box{
+    // transform: translate(-50%, -50%);
+    height: 20px;
+    border-radius: 40px;
+    border: 1px solid var(--main-border-color);
+    margin: 10px;
+    &:hover > .navbar-search-txt{
+        width: 240px;
+        padding: 0 6px;
+    }
+}
+
+.navbar-search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: var(--main-border-color);
+    font-size: 16px;
+    transition: .4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.conteiner-articles{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 4rem;
+    font-family: Noto sans, sans-serif;
+    font-weight: 400;
+    img{
+        width: 100%;
+        margin: auto;
+    }
+}
+
+.card{
+    max-width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: .75rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-titulo{
+    text-align: center;
+}
+
+.card-price{
+    display: flex;
+}
+
+.card-price-monto{
+    font-size: 2rem;
+}
+
+.card-price-conIVA{
+    font-size: .7rem;
+    align-self: center;
+}
+
+.card-stock{
+    font-size: .7rem;
+}
+
+.card-button{
+    display: flex;
+    margin: 8px auto;
+}

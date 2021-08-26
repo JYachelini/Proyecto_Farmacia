@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-border-color:#8e8a8a ;
+}
+
+body {
+  font-family: Noto Sans, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid var(--main-border-color);
+  padding: 0 20px;
+}
+
+nav div img {
+  width: 200px;
+}
+
+.navbar-left, .navbar-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+  font-family: Courier Prime, sans-serif;
+  font-size: .75rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-left li, .navbar-right li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+}
+
+.navbar-search-box {
+  height: 20px;
+  border-radius: 40px;
+  border: 1px solid var(--main-border-color);
+  margin: 10px;
+}
+
+.navbar-search-box:hover > .navbar-search-txt {
+  width: 240px;
+  padding: 0 6px;
+}
+
+.navbar-search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  color: var(--main-border-color);
+  font-size: 16px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+.conteiner-articles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 4rem;
+  font-family: Noto sans, sans-serif;
+  font-weight: 400;
+}
+
+.conteiner-articles img {
+  width: 100%;
+  margin: auto;
+}
+
+.card {
+  max-width: 200px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: .75rem;
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card-titulo {
+  text-align: center;
+}
+
+.card-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-price-monto {
+  font-size: 2rem;
+}
+
+.card-price-conIVA {
+  font-size: .7rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.card-stock {
+  font-size: .7rem;
+}
+
+.card-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 8px auto;
+}
+
+@font-face {
+  font-family: Trajan-pro;
+  src: url(../fonts/trajan-pro.otf);
+}
+/*# sourceMappingURL=main.css.map */
