@@ -23,16 +23,16 @@ class Products{
 }
 //Ingresos de Array manual
 const productos = [];
-productos.push(new Products(1, "omeprazol","Antiácido Antiulceroso", 145, 50, "Bagó", "Ulcozol 20", "../media/ulcozol.jpg"));
-productos.push(new Products(2, "ibuprofeno","Analgésico Antiinflam.", 155, 0, "Savant", "Fabogesic 600 Rapida acción", "../media/fabogesic600.png"));
-productos.push(new Products(3, "paracetamol","Analgésico Antifebril", 341, 5, "Genomma", "Tafirol 500", "../media/tafirol.jpg"));
-productos.push(new Products(4, "simvastatin","Hipolipemiante", 1462, 30, "Roemmers", "Vasotenal 10", "../media/vasotenal.png"));
-productos.push(new Products(5, "lansoprazol","Antiulceroso", 1960, 5, "Teva argentina", "Lansoprazol Teva", "../media/lansoprazol.png"));
-productos.push(new Products(6, "salbutamol","Broncodilatador", 822, 50, "Cassara", "Salbutral", "../media/salbutral.jpg"));
-productos.push(new Products(7, "Atorvastatin","Hipolipemiante", 2325, 350, "Raffo", "Lipifen", "../media/lipifen.jpg"));
-productos.push(new Products(8, "amlodipina","Antianginoso Antihipertensivo", 1406, 40, "Raffo", "Zundic", "../media/zundic.jpg"));
-productos.push(new Products(9, "ramipril","Antihipertensivo", 4174, 44, "Temis Lostalo", "Lostapres", "../media/lostapres.jpg"));
-productos.push(new Products(10, "Levotiroxina","Terapéutica tiroidea", 1842, 32, "Elea", "Euthyrox", "../media/euthyrox.png"));
+productos.push(new Products(1, "omeprazol","Antiácido Antiulceroso", 145, 50, "Bagó", "Ulcozol 20", "media/ulcozol.jpg"));
+productos.push(new Products(2, "ibuprofeno","Analgésico Antiinflam.", 155, 0, "Savant", "Fabogesic 600 Rapida acción", "media/fabogesic600.png"));
+productos.push(new Products(3, "paracetamol","Analgésico Antifebril", 341, 5, "Genomma", "Tafirol 500", "media/tafirol.jpg"));
+productos.push(new Products(4, "simvastatin","Hipolipemiante", 1462, 30, "Roemmers", "Vasotenal 10", "media/vasotenal.png"));
+productos.push(new Products(5, "lansoprazol","Antiulceroso", 1960, 5, "Teva argentina", "Lansoprazol Teva", "media/lansoprazol.png"));
+productos.push(new Products(6, "salbutamol","Broncodilatador", 822, 50, "Cassara", "Salbutral", "media/salbutral.jpg"));
+productos.push(new Products(7, "Atorvastatin","Hipolipemiante", 2325, 350, "Raffo", "Lipifen", "media/lipifen.jpg"));
+productos.push(new Products(8, "amlodipina","Antianginoso Antihipertensivo", 1406, 40, "Raffo", "Zundic", "media/zundic.jpg"));
+productos.push(new Products(9, "ramipril","Antihipertensivo", 4174, 44, "Temis Lostalo", "Lostapres", "media/lostapres.jpg"));
+productos.push(new Products(10, "Levotiroxina","Terapéutica tiroidea", 1842, 32, "Elea", "Euthyrox", "media/euthyrox.png"));
 
 const carrito = []
 
