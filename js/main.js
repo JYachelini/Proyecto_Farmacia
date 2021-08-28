@@ -132,3 +132,11 @@ function ordernadosPorPrecio(){
 }
 
 ordernadosPorPrecio();
+
+let navbarLeft = document.querySelector('#navbarLeft');
+navbarLeft = navbarLeft.clientWidth
+
+let navbarRight = document.querySelector('#navbarRight');
+navbarRight.style.width = navbarLeft+"px";
+
+console.log(navbarLeft);
