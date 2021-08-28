@@ -1,7 +1,6 @@
 footer{
     min-height: 300px;
     border-top: 1px solid var(--main-border-color);
-    background-color: #e8e0e0;
     font-family: var(--font-titles);
 }
 
@@ -62,6 +61,8 @@ footer{
     display: flex;
     justify-content: space-evenly;
     min-height: 150px;
+    color: black !important;
+    margin-top: 2rem;
     div{
         p{
             font-family: var(--font-details);
@@ -75,11 +76,18 @@ footer{
                 list-style: none;
                 text-transform: uppercase;
                 padding: 3px 0;
+                &:nth-child(1):hover{
+                    a svg{
+                        fill: #1bd741 !important;
+                    }
+
+                }
                 a{
                     display: inline-flex;
                     position: relative;
                     svg{
                         align-self: center;
+                        transition: .4s;
                     }
                 }
             }
@@ -87,24 +95,40 @@ footer{
     }
 }
 
-.footer-paymethod{
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    svg{
-        padding: 0 10px;
-    }
-}
 
 .footer-copyright{
     min-height: 20px;
     width: 100%;
     font-family: var(--font-details);
     margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
     span{
         display: flex;
         font-size: 10px;
         color: gray;
         justify-content: center;
+        align-self: center;
+        margin-left: 10px;
+    }
+    img{
+        padding: 0 10px;
+        width: 85px;
+        height: 30px;
+        filter: grayscale(100%);
+        transition: .2s;
+        &:hover{
+            filter: grayscale(0%);
+        }
+    }
+    svg{
+        padding: 0 10px;
+        width: 50px;
+        height: 30px;
+        filter: grayscale(100%);
+        transition: .2s;
+        &:hover{
+            filter: grayscale(0%);
+        }
     }
 }

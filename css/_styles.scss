@@ -24,6 +24,11 @@ nav{
     justify-content: space-between;
     border-bottom: 1px solid var(--main-border-color);
     padding: 0 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 1s;
+    background-color: white;
     div img{
     width: 200px;
     }
@@ -44,15 +49,6 @@ nav{
     &:hover::after{
         transform: scale(1, 1);
     }
-}
-
-.icon { 
-    width: 48px; 
-    height: 48px;
-}
-
-.hidden{
-    display: none;
 }
 
 .navbar-center{
@@ -107,7 +103,7 @@ nav{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 4rem;
+    margin: 8rem;
     font-family: Noto sans, sans-serif;
     font-weight: 400;
     img{

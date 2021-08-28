@@ -1,3 +1,15 @@
+var lastScrollTop = 0;
+navbar = document.querySelector('nav');
+window.addEventListener("scroll", function(){
+    var scrollTop = window.pageYOffset || this.document.documentElement.scrollTop;
+    if(scrollTop > lastScrollTop){
+        navbar.style.top="-100px";
+    }else{
+        navbar.style.top="0";
+    }
+    lastScrollTop = scrollTop;
+})
+
 class Products{
     constructor(id, name, description, price, stock, laboratory, nombreComercial, img){
         this.id = id;
