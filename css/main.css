@@ -35,6 +35,7 @@ nav {
   -webkit-transition: 1s;
   transition: 1s;
   background-color: white;
+  z-index: 5;
 }
 
 nav div img {
