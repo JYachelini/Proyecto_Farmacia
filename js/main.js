@@ -36,7 +36,7 @@ class Products{
 //Ingresos de Array manual
 const productos = [];
 productos.push(new Products(1, "omeprazol","Antiácido Antiulceroso", 145, 50, "Bagó", "Ulcozol 20", "media/ulcozol.jpg"));
-productos.push(new Products(2, "ibuprofeno","Analgésico Antiinflam.", 155, 0, "Savant", "Fabogesic 600 Rapida acción", "media/fabogesic600.png"));
+productos.push(new Products(2, "ibuprofeno","Analgésico Antiinflam.", 155, 0, "Savant", "Fabogesic 600", "media/fabogesic600.png"));
 productos.push(new Products(3, "paracetamol","Analgésico Antifebril", 341, 5, "Genomma", "Tafirol 500", "media/tafirol.jpg"));
 productos.push(new Products(4, "simvastatin","Hipolipemiante", 1462, 30, "Roemmers", "Vasotenal 10", "media/vasotenal.png"));
 productos.push(new Products(5, "lansoprazol","Antiulceroso", 1960, 5, "Teva argentina", "Lansoprazol Teva", "media/lansoprazol.png"));
@@ -54,14 +54,16 @@ function imprimirDatosMedicamento(n){
         const divCard = document.createElement('div');
         divCard.classList.add('card');
 
-        const titulo = document.createElement('h2');
+        const titulo = document.createElement('a');
         titulo.textContent = producto.nombreComercial;
+        titulo.setAttribute('href', '#');
         titulo.classList.add('card-titulo');
 
         const imagen = document.createElement('img');
         imagen.setAttribute("src", `${producto.img}`);
 
         const divsubCard = document.createElement('div');
+        divsubCard.classList.add('sub-card');
 
         const divPrecio = document.createElement('div');
         divPrecio.classList.add('card-price')
@@ -70,7 +72,7 @@ function imprimirDatosMedicamento(n){
         precio.innerText = `${producto.price}$`;
 
         const conIva = document.createElement('span');
-        conIva.classList.add('card-price-con;IVA')
+        conIva.classList.add('card-price-conIVA')
         conIva.innerText= `*Precio con IVA aplicado`
 
         const stock = document.createElement('p');
@@ -87,7 +89,7 @@ function imprimirDatosMedicamento(n){
         const buttonCarrito = document.createElement('input');
         buttonCarrito.classList.add('card-button');
         buttonCarrito.setAttribute("type", "button");
-        buttonCarrito.setAttribute("value", "Agregar al carrito");
+        buttonCarrito.setAttribute("value", "Añadir");
         const botones = document.querySelectorAll('.card-button');
         for(let boton of botones){
             boton.addEventListener("click", (product) =>{
@@ -96,15 +98,16 @@ function imprimirDatosMedicamento(n){
             })
         };
 
-        divCard.appendChild(titulo);
         divCard.appendChild(imagen);
+        divsubCard.appendChild(titulo);
         divPrecio.appendChild(precio);
-        divPrecio.appendChild(conIva);
+        // divPrecio.appendChild(conIva);
         divsubCard.appendChild(divPrecio);
-        divsubCard.appendChild(stock);
-        divsubCard.appendChild(laboratorio);
+        // divsubCard.appendChild(stock);
+        // divsubCard.appendChild(laboratorio);
+        divsubCard.appendChild(buttonCarrito);
         divCard.appendChild(divsubCard);
-        divCard.appendChild(buttonCarrito);
+        
         
 
         const conteinerArticulos = document.querySelector('.conteiner-articles');
