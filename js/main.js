@@ -59,6 +59,9 @@ function imprimirDatosMedicamento(n){
         titulo.setAttribute('href', '#');
         titulo.classList.add('card-titulo');
 
+        const linkImagen = document.createElement('a');
+        linkImagen.setAttribute("href", "#");
+        linkImagen.classList.add('card-link-img');
         const imagen = document.createElement('img');
         imagen.setAttribute("src", `${producto.img}`);
 
@@ -98,7 +101,8 @@ function imprimirDatosMedicamento(n){
             })
         };
 
-        divCard.appendChild(imagen);
+        linkImagen.appendChild(imagen);
+        divCard.appendChild(linkImagen);
         divsubCard.appendChild(titulo);
         divPrecio.appendChild(precio);
         // divPrecio.appendChild(conIva);
