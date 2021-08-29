@@ -1,3 +1,4 @@
+let count = 0;
 var lastScrollTop = 0;
 navbar = document.querySelector('nav');
 window.addEventListener("scroll", function(){
@@ -46,13 +47,20 @@ productos.push(new Products(8, "amlodipina","Antianginoso Antihipertensivo", 140
 productos.push(new Products(9, "ramipril","Antihipertensivo", 4174, 44, "Temis Lostalo", "Lostapres", "media/lostapres.jpg"));
 productos.push(new Products(10, "Levotiroxina","Terapéutica tiroidea", 1842, 32, "Elea", "Euthyrox", "media/euthyrox.png"));
 
-const carrito = []
+let carrito = []
+let total = 0;
+const DOMcarrito = document.querySelector('#carrito');
+const DOMtotal = document.querySelector('#total');
+const DOMvaciar = document.querySelector('#btn-vaciar');
 
 
 function imprimirDatosMedicamento(n){
     for(let producto of n){
         const divCard = document.createElement('div');
         divCard.classList.add('card');
+
+
+        divCard.setAttribute("id", `item${producto.id}`);
 
         const titulo = document.createElement('a');
         titulo.textContent = producto.nombreComercial;
@@ -89,17 +97,12 @@ function imprimirDatosMedicamento(n){
         laboratorio.classList.add('card-laboratory');
         laboratorio.innerText = `Producido por: ${producto.laboratory}`;
 
-        const buttonCarrito = document.createElement('input');
+        const buttonCarrito = document.createElement('button');
         buttonCarrito.classList.add('card-button');
-        buttonCarrito.setAttribute("type", "button");
-        buttonCarrito.setAttribute("value", "Añadir");
-        const botones = document.querySelectorAll('.card-button');
-        for(let boton of botones){
-            boton.addEventListener("click", (product) =>{
-                carrito.push(new Products(product.id, product.name, product.description, product.price, product.stock, product.laboratory, product.nombreComercial, product.img));
-                console.log(carrito);
-            })
-        };
+        buttonCarrito.innerText = `Añadir`;
+        buttonCarrito.setAttribute('id', 'add-animation');
+        buttonCarrito.setAttribute('marcador', producto.id);
+        buttonCarrito.addEventListener('click', addToCart);
 
         linkImagen.appendChild(imagen);
         divCard.appendChild(linkImagen);
@@ -111,13 +114,12 @@ function imprimirDatosMedicamento(n){
         // divsubCard.appendChild(laboratorio);
         divsubCard.appendChild(buttonCarrito);
         divCard.appendChild(divsubCard);
-        
-        
 
         const conteinerArticulos = document.querySelector('.conteiner-articles');
         conteinerArticulos.appendChild(divCard);
         }
 }
+
 
 
 //Ordenados por precio
@@ -131,7 +133,94 @@ function ordernadosPorPrecio(){
     imprimirDatosMedicamento(ordenadosPrecio);
 }
 
+function addToCart(evt){
+
+    // agregamos item al carrito
+    carrito.push(evt.target.getAttribute('marcador'));
+    // Calculamos el total
+    calcularTotal();
+    // Actualizamos el carrito
+    imprimirCarrito();
+}
+
+function imprimirCarrito(){
+    DOMcarrito.textContent = '';
+    // Se sacan los duplicados
+    const carritoSinDuplicados = [...new Set(carrito)];
+    // Se imprime el carrito
+    carritoSinDuplicados.forEach((item) => {
+        // Se obtiene el item de los productos cargados
+        const miItem = productos.filter((itemProducto) =>{
+            // Se comparan las id y se retorna en caso de que se encuentre.
+            return itemProducto.id === parseInt(item);
+        });
+        // Cuenta el numero de veces que se repite el producto
+        const cantItem = carrito.reduce((total, itemID) =>{
+            // Si coinciden las ID se incrementa el contador.
+            return  itemID === item ? total += 1 : total;
+        }, 0);
+        // Se empieza a imprimir el carrito
+        const carritoNuevo = document.createElement('li');
+        carritoNuevo.classList.add('itemCarrito');
+        carritoNuevo.textContent = `${cantItem} x ${miItem[0].nombreComercial} - ${miItem[0].price}$`;
+
+        // Boton de borrar item
+        const carritoBorrar = document.createElement('button');
+        carritoBorrar.classList.add('borrar-itemCarrito');
+        carritoBorrar.textContent = 'X';
+        carritoBorrar.dataset.item = item;
+        carritoBorrar.addEventListener('click', borrarItemCarrito);
+
+        // Mezclamos los elementos
+        carritoNuevo.appendChild(carritoBorrar);
+        DOMcarrito.appendChild(carritoNuevo);
+    });
+}
+
+// Función borrar carrito
+function borrarItemCarrito(evt){
+    // Obtenemos el ID del producto 
+    const id = evt.target.dataset.item;
+    // Borramos todos los productos
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== id;
+    })
+    // Imprimimos el carrito actualizado
+    imprimirCarrito();
+    // Calculamos el nuevo total
+    calcularTotal();
+}
+
+// Función calcular el total precio
+function calcularTotal(){
+    // Limpiamos el precio anterior
+    total = 0;
+    // Recorremos el array del carrito
+    carrito.forEach((item) => {
+        // Obtenemos el precio de cada item
+        const miItem = productos.filter((miItemProducto) =>{
+            return miItemProducto.id === parseInt(item);
+        });
+        total = total + miItem[0].price;
+    });
+    // Imprimimos el nuevo precio
+    DOMtotal.textContent = total.toFixed(2);
+}
+
+// Vaciar carrito
+function vaciarCarrito(){
+    // Limpiamos el carrito
+    carrito = [];
+
+    // Imprimimos los cambios
+    imprimirCarrito();
+    calcularTotal();
+}
+
+DOMvaciar.addEventListener('click', vaciarCarrito);
+
 ordernadosPorPrecio();
+
 
 let navbarLeft = document.querySelector('#navbarLeft');
 navbarLeft = navbarLeft.clientWidth
@@ -139,4 +228,20 @@ navbarLeft = navbarLeft.clientWidth
 let navbarRight = document.querySelector('#navbarRight');
 navbarRight.style.width = navbarLeft+"px";
 
-console.log(navbarLeft);
+const counter = document.getElementById('counter');
+const counterAnimation = document.querySelectorAll('#add-animation')
+for(const animation of counterAnimation){
+    animation.addEventListener('click', event =>{
+        navbar.style.top="0";
+        const cl = counter.classList;
+        const c = 'animated-counter';
+        count++;
+    
+        counter.innerText = count;
+        cl.remove(c, cl.contains(c));
+        setTimeout(() =>
+            counter.classList.add('animated-counter')
+        , 1)
+    })
+
+}
