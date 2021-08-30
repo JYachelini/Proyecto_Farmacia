@@ -39,10 +39,6 @@ nav {
   z-index: 5;
 }
 
-nav div img {
-  width: 200px;
-}
-
 .noScroll {
   overflow: hidden;
 }
@@ -664,6 +660,14 @@ footer {
       align-self: center;
   -webkit-transition: .4s;
   transition: .4s;
+}
+
+.cls-1 {
+  fill: #313232;
+}
+
+.cls-2 {
+  fill: #9cc23b;
 }
 
 .footer-copyright {
