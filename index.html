@@ -9,7 +9,7 @@
   <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
 </head>
 
-<body>
+<body id="body">
   <nav>
     <div id="navbarLeft">
       <ul class="navbar-left">
@@ -47,26 +47,22 @@
         <li>
           <div class="counter-conteiner">
             <span id="counter">1</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              style="fill: rgba(0, 0, 0, 1);">
-              <circle cx="10.5" cy="19.5" r="1.5"></circle>
-              <circle cx="17.5" cy="19.5" r="1.5"></circle>
-              <path
-                d="M21 7H7.334L6.18 4.23A1.995 1.995 0 0 0 4.333 3H2v2h2.334l4.743 11.385c.155.372.52.615.923.615h8c.417 0 .79-.259.937-.648l3-8A1.003 1.003 0 0 0 21 7zm-4 6h-2v2h-2v-2h-2v-2h2V9h2v2h2v2z">
-              </path>
-            </svg>
+            <button class="btn-carrito" id="btn-carrito">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1);" id="carrito-modal">
+                <circle cx="10.5" cy="19.5" r="1.5"></circle>
+                <circle cx="17.5" cy="19.5" r="1.5"></circle>
+                <path
+                  d="M21 7H7.334L6.18 4.23A1.995 1.995 0 0 0 4.333 3H2v2h2.334l4.743 11.385c.155.372.52.615.923.615h8c.417 0 .79-.259.937-.648l3-8A1.003 1.003 0 0 0 21 7zm-4 6h-2v2h-2v-2h-2v-2h2V9h2v2h2v2z">
+                </path>
+              </svg>
+            </button>
           </div>
         </li>
       </ul>
     </div>
   </nav>
   <div class="conteiner-articles"></div>
-  <div class="conteiner-carrito">
-    <p>Carrito</p>
-    <ul id="carrito"></ul>
-    <p>Total:<span id="total"></span></p>
-    <button id="btn-vaciar">Vaciar</button>
-  </div>
   <footer>
     <div class="footer-support">
       <div class="footer-map">
@@ -256,6 +252,20 @@
       </div>
     </div>
   </footer>
+  <div class="overlay" id="overlay"></div>
+  <div class="modalCarrito" id="modalCarrito">
+    <button class="btn-cerrar-carrito" id="closeCarrito">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M9.172 16.242 12 13.414l2.828 2.828 1.414-1.414L13.414 12l2.828-2.828-1.414-1.414L12 10.586 9.172 7.758 7.758 9.172 10.586 12l-2.828 2.828z"></path><path d="M12 22c5.514 0 10-4.486 10-10S17.514 2 12 2 2 6.486 2 12s4.486 10 10 10zm0-18c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"></path></svg>
+    </button>
+    <div class="conteiner-carrito">
+      <span style="padding-bottom: 20px;">Tu carrito</span>
+      <div class="carrito"><ul id="carrito"></ul></div>
+      <div class="conteiner-carrito-total">
+        <button id="btn-vaciar">Vaciar carrito</button>
+        <div class="flex-end"><p>Total<span id="total"></span></p></div>
+      </div>
+    </div>
+  </div>
   <script src='js/main.js'></script>
 </body>
 
