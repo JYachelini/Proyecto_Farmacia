@@ -243,44 +243,11 @@ div .flex-column{
         top: 1.2rem;
         right: 2rem;
         color: white;
-        &:not(.animated-counter){
-            display: none;
-        }
-        & .animated-counter{
-            animation: count .10s ease-in-out;
-        }
+        // &:not(.animated-counter){
+        //     display: none;
+        // }
     }
 }
-
-@keyframes count{
-    from{
-        top: 0;
-        right: -1.8rem;
-        transform: rotate(120deg);
-    }
-    25%{
-        top: 0;
-        right: -1.2rem;
-        transform: rotate(80deg);
-    }
-    50%{
-        top: 0;
-        right: -.6rem;
-        transform: rotate(60deg);
-    }
-    75%{
-        top: 0;
-        right: 0rem;
-        transform: rotate(30deg);
-    }
-    to{
-        top: .2rem;
-        right: .3rem;
-        transform: rotate(120deg);
-    }
-}
-
-
 
 .navbar-search-box{
     // transform: translate(-50%, -50%);
@@ -331,7 +298,6 @@ div .flex-column{
     transition: .4s;
     &:hover{
         box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
-        transform: scale(1.05, 1.05);
     }
 }
 
@@ -374,19 +340,83 @@ div .flex-column{
 }
 
 .card-button{
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    // background-color: black;
+    // color: white;
+    // font-family: var(--font-details);
+    // padding: 6px 0;
+    // border: 1px solid black;
+    // border-radius: .75rem;
+    // cursor: pointer;
+    // width: 100%;
+    // transition: .4s;
+    // &:hover{
+    //     color: black;
+    //     background-color: white;
+    // }
+    position: relative;
+    height: 2rem;
+    width: 100%;
+    border-radius: 50px;
     background-color: black;
+    border: 1px solid black;
     color: white;
     font-family: var(--font-details);
-    padding: 6px 0;
-    border: 1px solid black;
-    border-radius: .75rem;
-    cursor: pointer;
-    width: 100%;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+    overflow: hidden;
     transition: .4s;
     &:hover{
-        color: black;
+        background: white;
+        svg path{
+            fill: black;
+        }
+        p{
+            color: black;
+            &::before{
+                background-color: black;
+            }
+            &::after{
+                background-color: black;
+            }
+        }
+    }
+}
+
+#cart{
+    fill: white;
+    height: 20px;
+    margin-left: -20px;
+}
+
+
+.button-carrito-txt{
+    position: relative;
+    color: white;
+    font-family: var(--font-details);
+    margin-left: 15px;
+    text-transform: uppercase;
+    &::before{
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 10px;
         background-color: white;
+        top: 5px;
+        left : -52px;
+    }
+    &::after{
+        position: absolute;
+        content: '';
+        height: 2px;
+        width: 10px;
+        background-color: white;
+        top: 5px;
+        left : -52px;
+        transform: rotate(90deg);
     }
 }
