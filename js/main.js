@@ -257,7 +257,7 @@ function borrarItemCarrito(evt){
     // Calculamos el nuevo total
     calcularTotal();
     // LS
-    guardarCarritoLS()
+    guardarCarritoLS();
 }
 
 // Función calcular el total precio
@@ -286,6 +286,7 @@ function vaciarCarrito(){
     imprimirCarrito();
     comprobarProductos();
     calcularTotal();
+    guardarCarritoLS();
 }
 
 function guardarCarritoLS(){
