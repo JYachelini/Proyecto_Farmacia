@@ -29,7 +29,6 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-bottom: 1px solid var(--main-border-color);
-  padding: 0 10px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -37,6 +36,8 @@ nav {
   transition: 1s;
   background-color: white;
   z-index: 5;
+  max-height: 92px;
+  position: relative;
 }
 
 .noScroll {
@@ -50,6 +51,12 @@ nav {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .flex-column {
@@ -87,6 +94,10 @@ div .flex-column {
           transform: scale(1, 1);
 }
 
+#navbarRight {
+  padding: 5px;
+}
+
 .navbar-left, .navbar-right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,6 +126,54 @@ div .flex-column {
   position: relative;
 }
 
+.navbar-left li a {
+  cursor: pointer;
+}
+
+.slide-products {
+  display: none;
+  border-bottom: 1px solid var(--main-border-color);
+  position: absolute;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 10;
+  background-color: var(--light-gray);
+  right: 0;
+  left: 0;
+}
+
+.type-products {
+  list-style: none;
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: var(--font-details);
+}
+
+.type-products div {
+  margin: 0 3rem;
+}
+
+.type-products div p {
+  padding: 3px;
+  font-weight: 600;
+}
+
+.type-products div li {
+  padding: 3px;
+}
+
+.type-products div li a {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .btn-carrito {
   border: none;
   background: transparent;
@@ -126,7 +185,7 @@ div .flex-column {
   -webkit-transition: opacity .3s;
   transition: opacity .3s;
   position: fixed;
-  right: 0;
+  right: -1000px;
   margin: 2rem;
   padding: 30px;
   background: #fff;
@@ -300,7 +359,7 @@ div .flex-column {
       -ms-flex-pack: center;
           justify-content: center;
   top: 1.2rem;
-  right: 2rem;
+  right: .5rem;
   color: white;
 }
 
@@ -309,11 +368,7 @@ div .flex-column {
   border-radius: 40px;
   border: 1px solid var(--main-border-color);
   margin: 10px;
-}
-
-.navbar-search-box:hover > .navbar-search-txt {
-  width: 240px;
-  padding: 0 6px;
+  width: 100px;
 }
 
 .navbar-search-txt {
@@ -322,11 +377,16 @@ div .flex-column {
   outline: none;
   padding: 0;
   color: var(--main-border-color);
-  font-size: 16px;
+  font-size: 12px;
   -webkit-transition: .4s;
   transition: .4s;
   line-height: 40px;
-  width: 0px;
+  width: 100%;
+  font-family: var(--font-txt);
+}
+
+.navbar-search-txt:focus {
+  color: black;
 }
 
 .conteiner-articles {

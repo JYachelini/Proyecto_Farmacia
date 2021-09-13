@@ -24,13 +24,14 @@ nav{
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--main-border-color);
-    padding: 0 10px;
     position: fixed;
     top: 0;
     width: 100%;
     transition: 1s;
     background-color: white;
     z-index: 5;
+    max-height: 92px;
+    position: relative;
 }
 
 .noScroll{
@@ -40,6 +41,10 @@ nav{
 .flex-end{
     display: flex;
     justify-content: flex-end;
+}
+
+.flex{
+    display: flex;
 }
 
 .flex-column{
@@ -68,6 +73,10 @@ div .flex-column{
     }
 }
 
+#navbarRight{
+    padding: 5px;
+}
+
 .navbar-left, .navbar-right{
     display: flex;
     list-style: none;
@@ -86,6 +95,46 @@ div .flex-column{
     }
 }
 
+.navbar-left{
+    li a{
+        cursor: pointer;
+    }
+}
+
+.slide-products{
+    display: none;
+    border-bottom: 1px solid var(--main-border-color);
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 10;
+    background-color: var(--light-gray);
+    right: 0;
+    left: 0;
+}
+
+.type-products{
+    list-style: none;
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-details);
+    div{
+        margin: 0 3rem;
+        p{
+            padding: 3px;
+            font-weight: 600;
+        }
+        li{
+            padding: 3px;
+            // position: relative;
+            a{
+                position: relative;
+                display: inline-flex;
+            }
+        }
+    }
+}
+
 .btn-carrito{
     border: none;
     background: transparent;
@@ -96,7 +145,7 @@ div .flex-column{
     opacity: 0;
     transition: opacity .3s;
     position: fixed;
-    right: 0;
+    right: -1000px;
     margin: 2rem;
     padding: 30px;
     background: #fff;
@@ -241,7 +290,7 @@ div .flex-column{
         align-items: center;
         justify-content: center;
         top: 1.2rem;
-        right: 2rem;
+        right: .5rem;
         color: white;
         // &:not(.animated-counter){
         //     display: none;
@@ -255,10 +304,7 @@ div .flex-column{
     border-radius: 40px;
     border: 1px solid var(--main-border-color);
     margin: 10px;
-    &:hover > .navbar-search-txt{
-        width: 240px;
-        padding: 0 6px;
-    }
+    width: 100px;
 }
 
 .navbar-search-txt{
@@ -267,10 +313,14 @@ div .flex-column{
     outline: none;
     padding: 0;
     color: var(--main-border-color);
-    font-size: 16px;
+    font-size: 12px;
     transition: .4s;
     line-height: 40px;
-    width: 0px;
+    width: 100%;
+    font-family: var(--font-txt);
+    &:focus{
+        color: black;
+    }
 }
 
 .conteiner-articles{

@@ -10,6 +10,49 @@ window.addEventListener("scroll", function(){
     }
     lastScrollTop = scrollTop;
 })
+// Se abre productos
+$('#slide-products').mouseenter(() =>{
+    if($('#contact').css('display') === 'block'){
+        $('#contact').slideUp("fast");
+    }
+    if($('#discounts').css('display') === 'block'){
+        $('#discounts').slideUp("fast");
+    }
+    $('#products').delay(300).slideDown("slow");
+})
+// Se cierra productos
+$('nav').mouseleave(() =>{
+    $('#products').slideUp("slow");
+})
+// Se abre ofertas
+$('#slide-disc').mouseenter(() =>{
+    if($('#contact').css('display') === 'block'){
+        $('#contact').slideUp("fast");
+    }
+    if($('#products').css('display') === 'block'){
+        $('#products').slideUp("fast");
+    }
+    $('#discounts').delay(300).slideDown("slow");
+})
+// Se cierra ofertas
+$('nav').mouseleave(() =>{
+    $('#discounts').slideUp("slow");
+})
+// Se abre contacto
+$('#slide-contact').mouseenter(() =>{
+    if($('#discounts').css('display') === 'block'){
+        $('#discounts').slideUp("fast");
+    }
+    if($('#products').css('display') === 'block'){
+        $('#products').slideUp("fast");
+    }
+    $('#contact').delay(300).slideDown("slow");
+})
+// Se cierra contacto
+$('nav').mouseleave(() =>{
+    $('#contact').slideUp("slow");
+})
+
 
 class Products{
     constructor(id, name, description, price, stock, laboratory, nombreComercial, img){
@@ -72,6 +115,7 @@ function imprimirDatosMedicamento(n){
         linkImagen.setAttribute("href", "#");
         linkImagen.classList.add('card-link-img');
         const imagen = document.createElement('img');
+        imagen.classList.add('link-img');
         imagen.setAttribute("src", `${producto.img}`);
 
         const divsubCard = document.createElement('div');
@@ -315,7 +359,9 @@ navbarRight.style.width = navbarLeft+"px";
 
 const counter = document.getElementById('counter');
 const counterAnimation = document.querySelectorAll('#add-animation');
+
 // Animación: https://codepen.io/dmngu9/pen/oNzrRKZ NO ME FUNCIONA :(
+
 
 
 for(const animation of counterAnimation){
@@ -328,26 +374,41 @@ for(const animation of counterAnimation){
         setTimeout(() =>
             counter.classList.add('animated-counter')
         , 1)
+        // document.getElementById('overlay').classList.add('is-visible');
+        // document.getElementById('modalCarrito').classList.add('is-visible');
+        // document.getElementById('body').classList.add('noScroll');
+        $('#overlay').addClass("is-visible");
+        $('#modalCarrito').addClass("is-visible").animate({right:'0'});
+        $('body').addClass("noScroll");
     })
 }
 counter.innerText = carrito.length;
 
 document.getElementById('btn-carrito').addEventListener('click', function(){
-    document.getElementById('overlay').classList.add('is-visible');
-    document.getElementById('modalCarrito').classList.add('is-visible');
-    document.getElementById('body').classList.add('noScroll');
+    // document.getElementById('overlay').classList.add('is-visible');
+    // document.getElementById('modalCarrito').classList.add('is-visible');
+    // document.getElementById('body').classList.add('noScroll');
+    $('#overlay').addClass("is-visible");
+    $('#modalCarrito').addClass("is-visible").animate({right:'0'});
+    $('body').addClass("noScroll");
 });
 
 document.getElementById('closeCarrito').addEventListener('click', function(){
-    document.getElementById('overlay').classList.remove('is-visible');
-    document.getElementById('modalCarrito').classList.remove('is-visible');
-    document.getElementById('body').classList.remove('noScroll');
+    // document.getElementById('overlay').classList.remove('is-visible');
+    // document.getElementById('modalCarrito').classList.remove('is-visible');
+    // document.getElementById('body').classList.remove('noScroll');
+    $('#overlay').removeClass("is-visible");
+    $('#modalCarrito').removeClass("is-visible").animate({right:'-1000px'})
+    $('body').removeClass("noScroll");
 });
 
 document.getElementById('overlay').addEventListener('click', function(){
-    document.getElementById('overlay').classList.remove('is-visible');
-    document.getElementById('modalCarrito').classList.remove('is-visible');
-    document.getElementById('body').classList.remove('noScroll');
+    // document.getElementById('overlay').classList.remove('is-visible');
+    // document.getElementById('modalCarrito').classList.remove('is-visible');
+    // document.getElementById('body').classList.remove('noScroll');
+    $('#overlay').removeClass("is-visible");
+    $('#modalCarrito').removeClass("is-visible").animate({right:'-1000px'})
+    $('body').removeClass("noScroll");
 })
 
 $(document).keydown(function(event) {
