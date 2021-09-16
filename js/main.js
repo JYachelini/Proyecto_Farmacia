@@ -79,8 +79,36 @@ class Products{
 }
 
 const testproductos = fetch("js/productos.json")
-                    .then(x=>x.json())
-                    .then(x=>console.log(x));
+                    .then(res=>res.json())
+                    .then(data=>console.log(data[("productos")][0].id));
+
+const testfetch = () => {
+    fetch("js/productos.json")
+        .then(res=>res.json())
+        .then(productos=>{
+            console.log(productos);
+            productos.forEach(producto =>{
+                // imprimirDatosMedicamento(producto);
+                console.log(producto)
+            })
+        })
+}
+
+
+// function testfetch(){
+//     fetch("js/productos.json")
+//         .then(function(res){
+//             return res.json();
+//         })
+//         .then(function(data){
+//             const producto = JSON.parse(data);
+//             producto.forEach(function(producto){
+//                 imprimirDatosMedicamento(producto);
+//             })
+//         })
+// }
+
+testfetch();
 
 //Ingresos de Array manual
 const productos = [];
@@ -107,7 +135,6 @@ function imprimirDatosMedicamento(n){
     for(let producto of n){
         const divCard = document.createElement('div');
         divCard.classList.add('card');
-
 
         divCard.setAttribute("id", `item${producto.id}`);
 
