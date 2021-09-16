@@ -202,6 +202,24 @@ div .flex-column {
   padding-bottom: 0;
 }
 
+.carrito-cant {
+  text-align: center;
+  font-family: var(--font-details);
+}
+
+.carrito-cant-selector {
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+.carrito-cant-selector select {
+  border: 1px solid var(--main-border-color);
+  border-radius: .3rem;
+  padding: 0.3rem;
+  font-size: 14px;
+}
+
 .item-total-price {
   margin-right: 1rem;
 }

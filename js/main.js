@@ -77,6 +77,11 @@ class Products{
         }
     }
 }
+
+const testproductos = fetch("js/productos.json")
+                    .then(x=>x.json())
+                    .then(x=>console.log(x));
+
 //Ingresos de Array manual
 const productos = [];
 productos.push(new Products(1, "omeprazol","Antiácido Antiulceroso", 145, 50, "Bagó", "Ulcozol 20", "media/ulcozol.jpg"));
@@ -244,12 +249,33 @@ function imprimirCarrito(){
         carritoCantidad.style.textAlign = 'center';
         carritoCantidad.innerText = `x${cantItem}`;
 
+        // const carritoCantidad = document.createElement('div');
+        // carritoCantidad.classList.add('carrito-cant');
+        // carritoCantidad.style.textAlign = 'center';
+        // carritoCantidad.innerText = `Cant.`;
+        // const carritoCantidadTotal = document.createElement('label');
+        // carritoCantidadTotal.classList.add('carrito-cant-text');
+        // carritoCantidadTotal.innerText = `Cant.`;
+        // const carritoIngresarCantidad = document.createElement('span');
+        // carritoIngresarCantidad.classList.add('carrito-cant-selector');
+        // carritoIngresarCantidad.innerHTML= `<select id="producto-id-${miItem[0].id}" name="cantidad">
+        //                                     <option value="1">1</option>
+        //                                     <option value="1">2</option>
+        //                                     <option value="1">3</option>
+        //                                     <option value="1">4</option>
+        //                                     <option value="1">5</option>
+        //                                     <option value="1">6</option>
+        //                                     <option value="1">7</option>
+        //                                     <option value="1">8</option>
+        //                                     <option value="1">9</option>
+        //                                     <option value="1">10</option>
+        //                                     </select>`
+        // carritoCantidad.appendChild(carritoCantidadTotal);
+        // carritoCantidad.appendChild(carritoIngresarCantidad);
+
         const carritoPrice = document.createElement('p');
         carritoPrice.classList.add('item-total-price');
         carritoPrice.innerText = `${miItem[0].price}$`;
-        
-
-        
         // Boton de borrar item
         const carritoBorrar = document.createElement('button');
         carritoBorrar.classList.add('borrar-itemCarrito');

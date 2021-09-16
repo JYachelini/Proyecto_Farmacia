@@ -1,0 +1,104 @@
+{
+    "productos": [
+        {
+            "id":1,
+            "name" : "omeprazol",
+            "description" : "Antiácido Antiulceroso",
+            "price" : 145,
+            "stock" : 50,
+            "laboratory" : "Bagó",
+            "nombreComercial" : "Ulcozol 20",
+            "img" : "media/ulcozol.jpg"
+        },
+        {
+            "id":2,
+            "name" : "ibuprofeno",
+            "description" : "Analgésico Antiinflam.",
+            "price" : 155,
+            "stock" : 0,
+            "laboratory" : "Savant",
+            "nombreComercial" : "Fabogesic 600",
+            "img" : "media/fabogesic600.png"
+        },
+        {
+            "id":3,
+            "name" : "paracetamol",
+            "description" : "Analgésico Antifebril",
+            "price" : 341,
+            "stock" : 5,
+            "laboratory" : "Ganomma",
+            "nombreComercial" : "Tafirol 500",
+            "img" : "media/tafirol.jpg"
+        },
+        {
+            "id":4,
+            "name" : "simvastatin",
+            "description" : "Hipolipemiante",
+            "price" : 1462,
+            "stock" : 30,
+            "laboratory" : "Roemmers",
+            "nombreComercial" : "Vasotenal 10",
+            "img" : "media/vasotenal.png"
+        },
+        {
+            "id":5,
+            "name" : "lansoprazol",
+            "description" : "Antiulceroso",
+            "price" : 1960,
+            "stock" : 5,
+            "laboratory" : "Teva argentina",
+            "nombreComercial" : "Lansoprazol Teva",
+            "img" : "media/lansoprazol.png"
+        },
+        {
+            "id":6,
+            "name" : "salbutamol",
+            "description" : "Broncodilatador",
+            "price" : 822,
+            "stock" : 50,
+            "laboratory" : "Cassara",
+            "nombreComercial" : "Salbutral",
+            "img" : "media/salbutral.jpg"
+        },
+        {
+            "id":7,
+            "name" : "Atorvastatin",
+            "description" : "Hipolipemiante",
+            "price" : 2325,
+            "stock" : 350,
+            "laboratory" : "Raffo",
+            "nombreComercial" : "Lipifen",
+            "img" : "media/lipifen.jpg"
+        },
+        {
+            "id":8,
+            "name" : "amlodipina",
+            "description" : "Antianginoso Antihipertensivo",
+            "price" : 1406,
+            "stock" : 40,
+            "laboratory" : "Raffo",
+            "nombreComercial" : "Zundic",
+            "img" : "media/zundic.jpg"
+        },
+        {
+            "id":9,
+            "name" : "ramipril",
+            "description" : "Antihipertensivo",
+            "price" : 4174,
+            "stock" : 44,
+            "laboratory" : "Temis Lostalo",
+            "nombreComercial" : "Lostapres",
+            "img" : "media/lostapres.jpg"
+        },
+        {
+            "id":10,
+            "name" : "Levotiroxina",
+            "description" : "Terapéutica tiroidea",
+            "price" : 1842,
+            "stock" : 32,
+            "laboratory" : "Elea",
+            "nombreComercial" : "Euthyrox",
+            "img" : "media/euthyrox.png"
+        }
+    ]
+}
