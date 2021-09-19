@@ -66,6 +66,10 @@ function printeachproduct(product){
     titulo.setAttribute('href', '#');
     titulo.classList.add('card-titulo');
 
+    const descripcion = document.createElement('p');
+    descripcion.textContent = product.description;
+    descripcion.classList.add('card-description');
+
     const linkImagen = document.createElement('a');
     linkImagen.setAttribute("href", "#");
     linkImagen.classList.add('card-link-img');
@@ -116,6 +120,7 @@ function printeachproduct(product){
     linkImagen.appendChild(imagen);
     divCard.appendChild(linkImagen);
     divsubCard.appendChild(titulo);
+    divsubCard.appendChild(descripcion);
     divPrecio.appendChild(precio);
     // divPrecio.appendChild(conIva);
     divsubCard.appendChild(divPrecio);
@@ -166,7 +171,8 @@ function getProductInfo(producto, id){
         id: id,
         img: producto.querySelector('.link-img').src,
         nombreComercial: producto.querySelector('.card-titulo').textContent,
-        price: producto.querySelector('.card-price-monto').textContent
+        price: producto.querySelector('.card-price-monto').textContent,
+        description: producto.querySelector('.card-description').textContent
     }
     console.log(productInfo);
     addToCartList(productInfo);
@@ -193,9 +199,9 @@ function addToCartList(producto){
     const carritoProducto = document.createElement('p');
     carritoProducto.innerText = `${producto.nombreComercial}`;
 
-    // const carritoDescription = document.createElement('p');
-    // carritoDescription.style.fontSize = '12px';
-    // carritoDescription.innerText = `${producto.description}`;
+    const carritoDescription = document.createElement('p');
+    carritoDescription.style.fontSize = '12px';
+    carritoDescription.innerText = `${producto.description}`;
 
     // const carritoCantidad = document.createElement('p');
     // carritoCantidad.style.textAlign = 'center';
@@ -240,7 +246,7 @@ function addToCartList(producto){
 
     carritoImgLink.appendChild(carritoImg);
     carritoDetails.appendChild(carritoProducto);
-    // carritoDetails.appendChild(carritoDescription);
+    carritoDetails.appendChild(carritoDescription);
     carritoDetails.appendChild(carritoPrice);
     // carritoSubDiv.appendChild(carritoCantidad);
     carritoSubDiv.appendChild(carritoBorrar);
