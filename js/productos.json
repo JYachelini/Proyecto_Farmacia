@@ -1,16 +1,15 @@
-{
-    "productos": [
-        {
-            "id":1,
-            "name" : "omeprazol",
-            "description" : "Antiácido Antiulceroso",
-            "price" : 145,
-            "stock" : 50,
-            "laboratory" : "Bagó",
-            "nombreComercial" : "Ulcozol 20",
-            "img" : "media/ulcozol.jpg"
-        },
-        {
+[
+    {
+        "id":1,
+        "name" : "omeprazol",
+        "description" : "Antiácido Antiulceroso",
+        "price" : 145,
+        "stock" : 50,
+        "laboratory" : "Bagó",
+        "nombreComercial" : "Ulcozol 20",
+        "img" : "media/ulcozol.jpg"
+    },
+    {
             "id":2,
             "name" : "ibuprofeno",
             "description" : "Analgésico Antiinflam.",
@@ -101,4 +100,3 @@
             "img" : "media/euthyrox.png"
         }
     ]
-}

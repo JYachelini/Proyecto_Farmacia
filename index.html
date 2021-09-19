@@ -242,7 +242,7 @@
         </li>
         <li>
           <div class="counter-conteiner">
-            <span id="counter">1</span>
+            <span id="counter"></span>
             <button class="btn-carrito" id="btn-carrito">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                 style="fill: rgba(0, 0, 0, 1);" id="carrito-modal">
@@ -457,10 +457,11 @@
     </button>
     <div class="conteiner-carrito">
       <span style="padding-bottom: 20px; border-bottom: 1px solid var(--light-gray);">Tu carrito</span>
-      <div class="carrito"><ul id="carrito"></ul></div>
+      <div class="carrito"><p id="emptyCart">No hay productos en tu carrito</p><ul id="carrito"></ul></div>
       <div class="conteiner-carrito-total">
-        <button id="btn-vaciar">Vaciar carrito</button>
-        <div class="flex-end"><p>Total<span id="total"></span></p></div>
+        <button id="btn-vaciar" class="borrar-itemCarrito">Borrar</button>
+        <div><p>Total<span id="total"></span></p></div>
+        <!-- <button class="btn-pagar">Comprar</button> -->
       </div>
     </div>
   </div>

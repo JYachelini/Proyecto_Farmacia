@@ -37,7 +37,7 @@ nav {
   background-color: white;
   z-index: 5;
   max-height: 92px;
-  position: relative;
+  position: fixed;
 }
 
 .noScroll {
@@ -131,7 +131,7 @@ div .flex-column {
 }
 
 .slide-products {
-  display: none;
+  opacity: 0;
   border-bottom: 1px solid var(--main-border-color);
   position: absolute;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -140,6 +140,12 @@ div .flex-column {
   background-color: var(--light-gray);
   right: 0;
   left: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height .8s ease 0s, -webkit-box-shadow .8s ease 0s;
+  transition: max-height .8s ease 0s, -webkit-box-shadow .8s ease 0s;
+  transition: box-shadow .8s ease 0s, max-height .8s ease 0s;
+  transition: box-shadow .8s ease 0s, max-height .8s ease 0s, -webkit-box-shadow .8s ease 0s;
 }
 
 .type-products {
@@ -198,8 +204,58 @@ div .flex-column {
   bottom: 0;
   top: 0;
   width: 100vw;
-  max-width: 50%;
+  max-width: 40%;
   padding-bottom: 0;
+}
+
+.carritoAnimation {
+  -webkit-animation-name: carritoAnimation;
+          animation-name: carritoAnimation;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  right: 0;
+}
+
+.carritoClose {
+  -webkit-animation: carritoClose 1s;
+          animation: carritoClose 1s;
+  right: -1000px;
+}
+
+@-webkit-keyframes carritoAnimation {
+  from {
+    right: -1000px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes carritoAnimation {
+  from {
+    right: -1000px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes carritoClose {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1000px;
+  }
+}
+
+@keyframes carritoClose {
+  from {
+    right: 0;
+  }
+  to {
+    right: -1000px;
+  }
 }
 
 .carrito-cant {
@@ -270,6 +326,24 @@ div .flex-column {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.btn-pagar {
+  border: 1px solid black;
+  border-radius: .75rem;
+  background: black;
+  color: var(--light-gray);
+  font-family: var(--font-details);
+  cursor: pointer;
+  padding: .5rem 2rem;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.btn-pagar:hover {
+  color: black;
+  background-color: var(--light-gray);
+  border: 1px solid black;
 }
 
 #btn-vaciar {
@@ -464,6 +538,12 @@ div .flex-column {
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
   padding: 10px;
+  border-bottom-right-radius: .75rem;
+  border-bottom-left-radius: .75rem;
+}
+
+#emptyCart {
+  margin-top: 1.5rem;
 }
 
 .card-titulo {
@@ -523,23 +603,8 @@ div .flex-column {
 }
 
 .card-button:hover {
-  background: white;
-}
-
-.card-button:hover svg path {
-  fill: black;
-}
-
-.card-button:hover p {
   color: black;
-}
-
-.card-button:hover p::before {
-  background-color: black;
-}
-
-.card-button:hover p::after {
-  background-color: black;
+  background-color: var(--light-gray);
 }
 
 #cart {

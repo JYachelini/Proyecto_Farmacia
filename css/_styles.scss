@@ -31,7 +31,7 @@ nav{
     background-color: white;
     z-index: 5;
     max-height: 92px;
-    position: relative;
+    position: fixed;
 }
 
 .noScroll{
@@ -102,7 +102,7 @@ div .flex-column{
 }
 
 .slide-products{
-    display: none;
+    opacity: 0;
     border-bottom: 1px solid var(--main-border-color);
     position: absolute;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -110,6 +110,10 @@ div .flex-column{
     background-color: var(--light-gray);
     right: 0;
     left: 0;
+    // height: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: box-shadow .8s ease 0s, max-height .8s ease 0s;
 }
 
 .type-products{
@@ -157,8 +161,37 @@ div .flex-column{
     bottom: 0;
     top: 0;
     width: 100vw;
-    max-width: 50%;
+    max-width: 40%;
     padding-bottom: 0;
+}
+
+.carritoAnimation{
+    animation-name: carritoAnimation;
+    animation-duration: 1s;
+    right: 0;
+}
+
+.carritoClose{
+    animation: carritoClose 1s;
+    right: -1000px;
+}
+
+@keyframes carritoAnimation{
+    from{
+        right: -1000px;
+    }
+    to{
+        right: 0;
+    }
+}
+
+@keyframes carritoClose{
+    from{
+        right: 0;
+    }
+    to{
+        right: -1000px;
+    }
 }
 
 .carrito-cant{
@@ -216,6 +249,22 @@ div .flex-column{
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.btn-pagar{
+    border: 1px solid black;
+    border-radius: .75rem;
+    background: black;
+    color: var(--light-gray);
+    font-family: var(--font-details);
+    cursor: pointer;
+    padding: .5rem 2rem;
+    transition: .2s;
+    &:hover{
+        color: black;
+        background-color: var(--light-gray);
+        border: 1px solid black;
+    }
 }
 
 #btn-vaciar{
@@ -376,6 +425,12 @@ div .flex-column{
 .sub-card{
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    border-bottom-right-radius: .75rem;
+    border-bottom-left-radius: .75rem;
+}
+
+#emptyCart{
+    margin-top: 1.5rem;
 }
 
 .card-titulo{
@@ -437,19 +492,8 @@ div .flex-column{
     overflow: hidden;
     transition: .4s;
     &:hover{
-        background: white;
-        svg path{
-            fill: black;
-        }
-        p{
-            color: black;
-            &::before{
-                background-color: black;
-            }
-            &::after{
-                background-color: black;
-            }
-        }
+        color: black;
+        background-color: var(--light-gray);
     }
 }
 
