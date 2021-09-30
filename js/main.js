@@ -118,7 +118,7 @@ btnPayment.addEventListener("click", (e) =>{
         }
         else if(error[5]){
             dataError.innerHTML = error[5];
-            nameError.appendChild(dataError);
+            numError.appendChild(dataError);
             const marcarError = dataError.previousElementSibling;
             marcarError.style.borderBottom = '1px solid red';
         }
@@ -130,18 +130,24 @@ btnPayment.addEventListener("click", (e) =>{
         }
         else if(error[7]){
             dataError.innerHTML = error[7];
-            mesError.appendChild(dataError);
+            nameError.appendChild(dataError);
             const marcarError = dataError.previousElementSibling;
             marcarError.style.borderBottom = '1px solid red';
         }
         else if(error[8]){
             dataError.innerHTML = error[8];
-            yearError.appendChild(dataError);
+            mesError.appendChild(dataError);
             const marcarError = dataError.previousElementSibling;
             marcarError.style.borderBottom = '1px solid red';
         }
         else if(error[9]){
             dataError.innerHTML = error[9];
+            yearError.appendChild(dataError);
+            const marcarError = dataError.previousElementSibling;
+            marcarError.style.borderBottom = '1px solid red';
+        }
+        else if(error[10]){
+            dataError.innerHTML = error[10];
             ccvError.appendChild(dataError);
             const marcarError = dataError.previousElementSibling;
             marcarError.style.borderBottom = '1px solid red';
@@ -177,31 +183,35 @@ const validarPayment = () =>{
                 error[4] = "Los números de la tarjeta ingresados no son de Visa.";
                 return error;
             }
+        } else{
+            error[0] = true;
+            error[5] = "Solo aceptamos tarjetas Visa y Mastercard."
+            return error;
         }
     }
     else if(nombre.value.length == 0){
         error[0] = true;
-        error[5] = "El nombre esta vacio."
+        error[6] = "El nombre esta vacio."
         return error;
     }
     else if(nombre.value.length < 3 || nombre.value.length > 40){
         error[0] = true;
-        error[6] = "El nombre es inválido."
+        error[7] = "El nombre es inválido."
         return error;
     }
     else if(mes.value == 'Mes'){
         error[0] = true;
-        error[7] = "Selecciona un mes"
+        error[8] = "Selecciona un mes"
         return error;
     }
     else if(year.value == 'Año'){
         error[0] = true;
-        error[8] = "Selecciona un año"
+        error[9] = "Selecciona un año"
         return error;
     }
     else if (ccv.value.length != 3){
         error[0] = true;
-        error[9] = "El número CCV es inválido.";
+        error[10] = "El número CCV es inválido.";
         return error;
     }
     error[0] = false;
