@@ -2,25 +2,57 @@ footer{
     min-height: 300px;
     border-top: 1px solid var(--main-border-color);
     font-family: var(--font-titles);
+    background-color: #1f1f1f;
+    padding-top: 3rem;
+    & .footer-support{
+        max-width: 1366px;
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding-top: 4rem 0;
+        &:last-child{
+            padding-top: 20px 30px;
+            width: 50%;
+            background-color: rgba(255,255,255,1);
+            border-radius: 20px;
+            span{
+                color: #1f1f1f;
+                display: block;
+                border-bottom: 1px solid rgba(0,0,0,.2);
+                padding-bottom: 5px;
+            }
+        }
+    }
 }
 
 .footer-support{
     display: flex;
     justify-content: space-evenly;
     min-height: 150px;
-    margin-top: 3rem;
+}
+
+.footer-time-pay{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-support-timesconteiner{
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: 100%;
+    justify-content: center;
+    height: auto;
 }
 
-.footer-support-times{  
+.footer-time{
+    text-align: center;
+    color: white;
+}
+
+.footer-support-times{
     width: 100%;
     text-align: center;
+    color: white;
     margin: 1.5rem 0;
     p{
         font-family: var(--font-details);
@@ -34,11 +66,23 @@ footer{
     }
 }
 
+.footer-pay-methods{
+    display: flex;
+    margin: auto;
+    svg{
+        padding: 0 10px;
+        width: 100px;
+        height: 50px;
+        margin: auto;
+    }
+}
 
 .footer-map{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 50%;
+    color: #f1f1f1;
     span{
         display: flex;
         justify-content: center;
@@ -47,13 +91,10 @@ footer{
     iframe{
         border-radius: 1rem;
         margin: 1.5rem 0;
-        width: 400px;
-        height: 250px;
+        width: 80%;
+        height: 300px;
         transition: .5s;
-        &:hover{
-            width: 600px;
-            height: 450px;
-        }
+        align-self: center;
     }
 }
 
@@ -61,20 +102,23 @@ footer{
     display: flex;
     justify-content: space-evenly;
     min-height: 150px;
-    color: black !important;
+    color: #f1f1f1;
+    background-color: rgba(0,0,0,.2);
+    padding: 2rem 0;
     margin-top: 2rem;
     div{
         p{
             font-family: var(--font-details);
-            font-size: 18px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
         ul{
             margin-top: 10px;
             li{
                 font-family: var(--font-txt);
-                font-size: 12px;
+                font-size: 14px;
                 list-style: none;
-                text-transform: uppercase;
                 padding: 3px 0;
                 &:nth-child(1):hover{
                     a svg{
@@ -84,6 +128,7 @@ footer{
                 }
                 a{
                     display: inline-flex;
+                    color: #f1f1f1;
                     position: relative;
                     svg{
                         align-self: center;
@@ -104,12 +149,14 @@ footer{
 }
 
 .footer-copyright{
-    min-height: 20px;
+    min-height: auto;
+    padding: 10px 20px;
     width: 100%;
     font-family: var(--font-details);
-    margin-top: 2rem;
+    background: rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0,0,0,.3);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     span{
         display: flex;
         font-size: 10px;
@@ -118,25 +165,4 @@ footer{
         align-self: center;
         margin-left: 10px;
     }
-    img{
-        padding: 0 10px;
-        width: 85px;
-        height: 30px;
-        filter: grayscale(100%);
-        transition: .2s;
-        &:hover{
-            filter: grayscale(0%);
-        }
-    }
-    svg{
-        padding: 0 10px;
-        width: 50px;
-        height: 30px;
-        filter: grayscale(100%);
-        transition: .2s;
-        &:hover{
-            filter: grayscale(0%);
-        }
-    }
 }
-
