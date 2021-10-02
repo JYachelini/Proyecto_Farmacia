@@ -25,6 +25,7 @@ const mesCard = document.querySelector('#tarjeta .mes');
 const yearCard = document.querySelector('#tarjeta .year');
 const ccvCard = document.querySelector('#tarjeta .ccv');
 const btnPayment = document.getElementById('btn-payment-complete');
+const paymentComplete = document.querySelector('.modal-payment-succes');
 const logo = document.querySelector('.logo-marca');
 const label = document.querySelectorAll('.label');
 const resultadoPayment = document.getElementById('resultado');
@@ -153,7 +154,13 @@ btnPayment.addEventListener("click", (e) =>{
             marcarError.style.borderBottom = '1px solid red';
         }
     } else{
-        console.log('x');
+        document.querySelector('.modal-payment-nav').style.filter = 'blur(1px)'
+        document.querySelector('.modal-payment-form').style.filter = 'blur(1px)'
+        paymentComplete.style.display = 'flex';
+        setTimeout(() => {
+            document.querySelector('.loading').style.display = 'none'
+            document.querySelector('.payment-succes-text').style.display = 'block'
+        }, 2000)
     }
 })
 

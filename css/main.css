@@ -442,12 +442,91 @@ footer .underline-center::after {
   background-image: linear-gradient(282deg, #fff, #fbfbfb 10%, #d3d3d3);
 }
 
-.payment-succes {
-  color: green;
-  font-size: 12px;
-  width: 50%;
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: auto;
+}
+
+.loading div {
+  width: 0.475rem;
+  height: 2.5rem;
+  background: black;
+  margin-left: 0.875rem;
+  -webkit-animation: bar-loading 1s infinite alternate;
+          animation: bar-loading 1s infinite alternate;
+}
+
+.loading div:nth-child(1) {
+  margin: 0;
+}
+
+.loading div:nth-child(2) {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+.loading div:nth-child(3) {
+  -webkit-animation-delay: -0.4s;
+          animation-delay: -0.4s;
+}
+
+@-webkit-keyframes bar-loading {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+@keyframes bar-loading {
+  0% {
+    -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
+.modal-payment-succes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) perspective(800px);
+          transform: translate(-50%, -50%) perspective(800px);
   text-align: center;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  border-radius: 20px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 5px 5px 10px black, inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.2), inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px black, inset 5px 5px 10px rgba(0, 0, 0, 0.2), inset -5px -5px 10px rgba(255, 255, 255, 0.2), inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  min-height: 150px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.payment-succes-text {
+  display: none;
 }
 
 .payment-error {
