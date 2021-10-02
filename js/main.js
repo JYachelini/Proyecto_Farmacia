@@ -161,6 +161,11 @@ btnPayment.addEventListener("click", (e) =>{
             document.querySelector('.loading').style.display = 'none'
             document.querySelector('.payment-succes-text').style.display = 'block'
         }, 2000)
+        let products = getProductFromStorage();
+        products = [];
+        localStorage.setItem('products', JSON.stringify(products));
+        loadCart();
+        checkProducts()
     }
 })
 
@@ -280,8 +285,6 @@ numero.addEventListener('keyup', (e) => {
         tarjetaTrasera.style.backgroundImage = 'linear-gradient(90deg,#021670,#5168d1)';
         tarjetaTrasera.style.color = 'black';
     }
-
-
     // Voltear la tarjeta cuando se escribe
     mostrarFrente();
 })
@@ -290,11 +293,8 @@ numero.addEventListener('keyup', (e) => {
 
 nombre.addEventListener('keyup', (e) =>{
     let inputValue = e.target.value;
-
     nombre.value = inputValue.replace(/[0-9]/g, '');
-
     nombreCard.textContent = inputValue;
-
     if(inputValue == ''){
         nombreCard.textContent = 'Jhon Doe';
     }
