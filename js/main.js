@@ -162,6 +162,11 @@ btnPayment.addEventListener("click", (e) =>{
             document.querySelector('.payment-succes-text').style.display = 'block'
         }, 2000)
         let products = getProductFromStorage();
+        for(let i = 0; i<products.length; i++){
+            let itemsCarrito = carrito;
+            itemsCarrito = itemsCarrito.firstChild;
+            itemsCarrito.remove();
+        }
         products = [];
         localStorage.setItem('products', JSON.stringify(products));
         loadCart();
